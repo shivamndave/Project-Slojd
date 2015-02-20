@@ -27,6 +27,9 @@ lines = filter(None, lines)
 print lines
 print len(lines)
 text_file.close()
+wordIndex8=randint(0, len(lines)-1)
+print lines[wordIndex8] + " ,APPLES TEST!"
+
 
 # # This thing just prints out the contents of the file
 # files = glob.glob(path2)   
