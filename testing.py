@@ -4,6 +4,24 @@ import glob
 import errno
 import os
 
+# variables
+x = 5
+y = 7
+z = 5
+
+def randomness (n):
+	line = ""
+	while (n > 0):
+		temp = randint(1, n)
+		line = line + str(temp)
+		n-=temp
+	return line
+
+print "line1 is: " + randomness (x) + " line2 is: " + randomness(y) + " line3 is: " + randomness(z) 
+
+
+
+
 
 wordList1 = ["Enchanting", "Amazing", "Colourful", "Delightful", "Delicate"]
 wordList2 = ["visions", "distance", "conscience", "process", "chaos"]
@@ -24,7 +42,7 @@ text_file = open(path2, "r")
 # lines = text_file.readlines()
 lines = text_file.read().split('\r\n')
 lines = filter(None, lines)
-print lines
+# print lines #too many words so I'll comment out
 print len(lines)
 text_file.close()
 wordIndex8=randint(0, len(lines)-1)
