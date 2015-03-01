@@ -49,6 +49,7 @@ adverbFile4 = open(adverbPath4, "r")
 
 # Enter a number to get a file based on syllable count
 # EX: getNounFile(3) = gets 3 syllable noun file
+
 def getNounFile(sylNumN):
 	if sylNumN == 1:
 		nounLines1 = nounFile1.read().split('\r\n')
