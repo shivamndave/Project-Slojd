@@ -76,7 +76,7 @@ def getAdjFile(sylNumAj):
 		return filter(None, adjLines3)
 	if sylNumAj == 4:
 		adjLines4 = adjFile4.read().split('\r\n')
-		return filter(None, adjLines4)	
+		return filter(None, adjLines4)
 
 def getVerbFile(sylNumV):
 	if sylNumV == 1:
@@ -95,14 +95,14 @@ def getVerbFile(sylNumV):
 def getAdverbFile(sylNumAv):
 	if sylNumAv == 1:
 		adverbLines1 = adverbFile1.read().split('\r\n')
-		return filter(None, adverbLines1)
+		return list(filter(None, adverbLines1))
 	if sylNumAv == 2:
 		adverbLines2 = adverbFile2.read().split('\r\n')
-		return filter(None, adverbLines2)
+		return list(filter(None, adverbLines2))
 	if sylNumAv == 3:
 		adverbLines3 = adverbFile3.read().split('\r\n')
-		return filter(None, adverbLines3)
+		return list(filter(None, adverbLines3))
 	if sylNumAv == 4:
 		adverbLines4 = adverbFile4.read().split('\r\n')
-		return filter(None, adverbLines4)
+		return list(filter(None, adverbLines4))
 	
