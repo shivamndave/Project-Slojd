@@ -1,6 +1,11 @@
 from flask import render_template, flash, redirect
 from app import app
-from .forms import LoginForm
+# from .forms import LoginForm
+from random import randint
+import sys
+import glob
+import errno
+import os
 
 # index view function suppressed for brevity
 
@@ -20,7 +25,7 @@ from .forms import LoginForm
 #                            providers=app.config['OPENID_PROVIDERS'])
 
 def index():
-    user = {'nickname': 'Miguel'}  # fake user
+    user = {'nickname': 'yoFace'}  # fake user
     posts = [  # fake array of posts
         { 
             'author': {'nickname': 'John'}, 
@@ -31,7 +36,17 @@ def index():
             'body': 'The Avengers movie was so cool!' 
         }
     ]
+    blah = randomness(5)
     return render_template("index.html",
                            title='Home',
                            user=user,
-                           posts=posts)
+                           posts=posts,
+                           blah=blah)
+
+def randomness (n):
+	line = ""
+	while (n > 0):
+		temp = randint(1, n)
+		line = line + str(temp)
+		n-=temp
+	return line

@@ -1,9 +1,9 @@
 <html>
   <head>
     {% if title %}
-    <title>{{ title }} - microblog</title>
+    <title>{{ title }} - HaikuMaker</title>
     {% else %}
-    <title>Welcome to microblog</title>
+    <title>Welcome to HaikuMaker</title>
     {% endif %}
   </head>
   <body>
@@ -13,6 +13,7 @@
 	    {% for post in posts %}
 	    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
 	    {% endfor %}
+	    <p>{{blah}} </p>
 	{% endblock %}
   </body>
 </html>
