@@ -6,6 +6,8 @@ import sys
 import glob
 import errno
 import os
+import HaikuMod
+import HaikuTest
 
 # index view function suppressed for brevity
 
@@ -25,6 +27,7 @@ import os
 #                            providers=app.config['OPENID_PROVIDERS'])
 
 def index():
+	# This is sample for test
     user = {'nickname': 'yoFace'}  # fake user
     posts = [  # fake array of posts
         { 
@@ -37,11 +40,13 @@ def index():
         }
     ]
     blah = randomness(5)
+    blah2 = HaikuTest.makeHaiku1()
     return render_template("index.html",
                            title='Home',
                            user=user,
                            posts=posts,
-                           blah=blah)
+                           blah=blah,
+                           blah2=blah2)
 
 def randomness (n):
 	line = ""
