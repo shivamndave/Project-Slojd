@@ -47,62 +47,98 @@ adverbFile2 = open(adverbPath2, "r")
 adverbFile3 = open(adverbPath3, "r")
 adverbFile4 = open(adverbPath4, "r")
 
+nounLines1 = nounFile1.read().split('\r\n')
+nounLines2 = nounFile2.read().split('\r\n')
+nounLines3 = nounFile3.read().split('\r\n')
+nounLines4 = nounFile4.read().split('\r\n')
+
+adjLines1 = adjFile1.read().split('\r\n')
+adjLines2 = adjFile2.read().split('\r\n')
+adjLines3 = adjFile3.read().split('\r\n')
+adjLines4 = adjFile4.read().split('\r\n')
+
+verbLines1 = verbFile1.read().split('\r\n')
+verbLines2 = verbFile2.read().split('\r\n')
+verbLines3 = verbFile3.read().split('\r\n')
+verbLines4 = verbFile4.read().split('\r\n')
+
+adverbLines1 = adverbFile1.read().split('\r\n')
+adverbLines2 = adverbFile2.read().split('\r\n')
+adverbLines3 = adverbFile3.read().split('\r\n')
+adverbLines4 = adverbFile4.read().split('\r\n')
+
+nounFile1.close
+nounFile2.close
+nounFile3.close
+nounFile4.close
+
+adjFile1.close
+adjFile2.close
+adjFile3.close
+adjFile4.close
+
+verbFile1.close
+verbFile2.close
+verbFile3.close
+verbFile4.close
+
+adverbFile1.close
+adverbFile2.close
+adverbFile3.close
+adverbFile4.close
+
+
+
 # Enter a number to get a file based on syllable count
 # EX: getNounFile(3) = gets 3 syllable noun file
 
+def getWordFile(fileNumR, sylNumR):
+	if fileNumR == 1:
+		return getNounFile(sylNumR)
+	if fileNumR == 2:
+		return getAdjFile(sylNumR)
+	if fileNumR == 3:
+		return getVerbFile(sylNumR)
+	if fileNumR == 4:
+		return getAdverbFile(sylNumR)
+
 def getNounFile(sylNumN):
 	if sylNumN == 1:
-		nounLines1 = nounFile1.read().split('\r\n')
 		return filter(None, nounLines1)
 	if sylNumN == 2:
-		nounLines2 = nounFile2.read().split('\r\n')
 		return filter(None, nounLines2)
 	if sylNumN == 3:
-		nounLines3 = nounFile3.read().split('\r\n')
 		return filter(None, nounLines3)
 	if sylNumN == 4:
-		nounLines4 = nounFile4.read().split('\r\n')
 		return filter(None, nounLines4)
 
 def getAdjFile(sylNumAj):
 	if sylNumAj == 1:
-		adjLines1 = adjFile1.read().split('\r\n')
 		return filter(None, adjLines1)
 	if sylNumAj == 2:
-		adjLines2 = adjFile2.read().split('\r\n')
 		return filter(None, adjLines2)
 	if sylNumAj == 3:
-		adjLines3 = adjFile3.read().split('\r\n') 
 		return filter(None, adjLines3)
 	if sylNumAj == 4:
-		adjLines4 = adjFile4.read().split('\r\n')
 		return filter(None, adjLines4)
 
 def getVerbFile(sylNumV):
 	if sylNumV == 1:
-		verbLines1 = verbFile1.read().split('\r\n')
 		return filter(None, verbLines1)
 	if sylNumV == 2:
-		verbLines2 = verbFile2.read().split('\r\n')
 		return filter(None, verbLines2)
 	if sylNumV == 3:
-		verbLines3 = verbFile3.read().split('\r\n')
 		return filter(None, verbLines3)
 	if sylNumV == 4: 
-		verbLines4 = verbFile4.read().split('\r\n')
 		return filter(None, verbLines4)
 
 def getAdverbFile(sylNumAv):
 	if sylNumAv == 1:
-		adverbLines1 = adverbFile1.read().split('\r\n')
 		return list(filter(None, adverbLines1))
 	if sylNumAv == 2:
-		adverbLines2 = adverbFile2.read().split('\r\n')
 		return list(filter(None, adverbLines2))
 	if sylNumAv == 3:
-		adverbLines3 = adverbFile3.read().split('\r\n')
 		return list(filter(None, adverbLines3))
 	if sylNumAv == 4:
-		adverbLines4 = adverbFile4.read().split('\r\n')
 		return list(filter(None, adverbLines4))
 	
