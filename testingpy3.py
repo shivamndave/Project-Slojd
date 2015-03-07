@@ -17,7 +17,7 @@ def randomness (n):
 		n-=temp
 	return line
 
-print "line1 is: " + randomness (x) + " line2 is: " + randomness(y) + " line3 is: " + randomness(z) 
+print ("line1 is: " + randomness (x) + " line2 is: " + randomness(y) + " line3 is: " + randomness(z) )
 
 
 
@@ -36,17 +36,18 @@ wordList7 = ["inspiration", "imagination", "wisdom", "thoughts"]
 # This path2 seems to work
 path2 = os.path.dirname(os.path.abspath(__file__)) + "/dict/nouns/1syllablenouns.txt"
 
-print path2
+print (path2)
 
 text_file = open(path2, "r")
 # lines = text_file.readlines()
 lines = text_file.read().split('\r\n')
-lines = filter(None, lines)
+lines = list(filter(None, lines))
 # print lines #too many words so I'll comment out
-print len(lines)
+x = len(lines)
+print (len(lines))
 text_file.close()
 wordIndex8=randint(0, len(lines)-1)
-print lines[wordIndex8] + " ,APPLES TEST!"
+print (lines[wordIndex8] + " ,APPLES TEST!")
 
 
 # # This thing just prints out the contents of the file
