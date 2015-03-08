@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, Flask
 from app import app
 # from .forms import LoginForm
 from random import randint
@@ -40,6 +40,7 @@ def index():
         }
     ]
     blah = randomness(5)
+
     blah2 = HaikuTest.makeHaiku1()
     return render_template("index.html",
                            title='Home',

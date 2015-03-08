@@ -22,7 +22,10 @@ def makeHaiku1():
 	print ("\n" + makeLine1(randSylLine(5)))
 	print (makeLine1(randSylLine(7)))
 	print (makeLine1(randSylLine(5)) + "\n")
-	apple = "\n" + makeLine1(randSylLine(5)) + makeLine1(randSylLine(7)) + makeLine1(randSylLine(5)) + "\n"
+	# apple1=makeLine1(randSylLine(5))
+	# apple2=makeLine1(randSylLine(7))
+	# apple3=makeLine1(randSylLine(5))
+	apple = "\n\" " + makeLine1(randSylLine(5))+ "\n  " + makeLine1(randSylLine(7)) + "\n  " +makeLine1(randSylLine(5)) + "\"\n"
 	return apple
 
 

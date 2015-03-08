@@ -1,0 +1,14 @@
+#newlines{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -390px;
+	font-style: oblique;
+	font-size: 40;
+
+}
+
+body{
+	background-color: rgb(151,202,204);
+}
