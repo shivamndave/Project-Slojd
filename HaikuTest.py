@@ -20,13 +20,13 @@ def randSylLine (max):
 
 
 def makeHaiku1():
-	print ("\n" + makeLine1(randSylLine(5)))
-	print (makeLine1(randSylLine(7)))
-	print (makeLine1(randSylLine(5)) + "\n")
+	# print ("\n" + makeLine(randSylLine(5)))
+	# print (makeLine(randSylLine(7)))
+	# print (makeLine(randSylLine(5)) + "\n")
 	# apple1=makeLine1(randSylLine(5))
 	# apple2=makeLine1(randSylLine(7))
 	# apple3=makeLine1(randSylLine(5))
-	apple = "\n\" " + makeLine1(randSylLine(5))+ "\n  " + makeLine1(randSylLine(7)) + "\n  " +makeLine1(randSylLine(5)) + "\"\n"
+	apple = "\n\" " + makeLine(randSylLine(5), randFileLine (5))+ "\n  " + makeLine(randSylLine(7), randFileLine (7)) + "\n  " +makeLine(randSylLine(5), randFileLine (5)) + "\"\n"
 	return apple
 
 def randFileLine (size):
