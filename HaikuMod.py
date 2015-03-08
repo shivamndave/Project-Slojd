@@ -35,10 +35,10 @@ def fetchFilePath(fileNumP, sylNumP):
 
 def fetchFileStrPath(filePathNum, sylNum):
 	basePath = os.path.dirname(os.path.abspath(__file__))
-	nounsFilePath = os.path.abspath(os.path.join(basePath, "../projectslojd/dict/nouns"))
-	adjFilePath = os.path.abspath(os.path.join(basePath, "../projectslojd/dict/adjectives"))
-	verbFilePath = os.path.abspath(os.path.join(basePath, "../projectslojd/dict/verbs"))
-	adverbFilePath = os.path.abspath(os.path.join(basePath, "../projectslojd/dict/adverbs"))
+	nounsFilePath = os.path.abspath(os.path.join(basePath, "../Project-Slojd/dict/nouns"))
+	adjFilePath = os.path.abspath(os.path.join(basePath, "../Project-Slojd/dict/adjectives"))
+	verbFilePath = os.path.abspath(os.path.join(basePath, "../Project-Slojd/dict/verbs"))
+	adverbFilePath = os.path.abspath(os.path.join(basePath, "../Project-Slojd/dict/adverbs"))
 
 	if filePathNum == 1:
 		return nounsFilePath + "/" + str(sylNum) +"syllablenouns.txt"
