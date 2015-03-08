@@ -18,6 +18,17 @@ def randSylLine (max):
 		remainSyl-=tempNum
 	return sylList
 
+
+def makeHaiku1():
+	# print ("\n" + makeLine(randSylLine(5)))
+	# print (makeLine(randSylLine(7)))
+	# print (makeLine(randSylLine(5)) + "\n")
+	# apple1=makeLine1(randSylLine(5))
+	# apple2=makeLine1(randSylLine(7))
+	# apple3=makeLine1(randSylLine(5))
+	apple = "\n\" " + makeLine(randSylLine(5), randFileLine (5))+ "\n  " + makeLine(randSylLine(7), randFileLine (7)) + "\n  " +makeLine(randSylLine(5), randFileLine (5)) + "\"\n"
+	return apple
+
 def randFileLine (size):
 	fileList = []
 	count = 0
@@ -26,6 +37,7 @@ def randFileLine (size):
 		fileList.append(tempNum)
 		count+=1
 	return fileList
+
 
 def makeLine(sylCountList, fileCountList):
 	# print ("SYL: " + str(sum(sylCountList)))
