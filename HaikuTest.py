@@ -19,7 +19,6 @@ def randSylLine (max):
 	return sylList
 
 def randFileLine (size):
-	startNum = randint(1, 4)
 	fileList = []
 	count = 0
 	while (count < size):
@@ -30,7 +29,7 @@ def randFileLine (size):
 
 def makeLine(sylCountList, fileCountList):
 	# print ("SYL: " + str(sum(sylCountList)))
-	# print ("FILE: " + str(fileCountList))
+	print ("FILE: " + str(fileCountList))
 	retLine = ""
 	for tempSy, tempFi in zip(sylCountList, fileCountList):
 		tempLines = HaikuMod.getWordFile(tempFi, tempSy)
@@ -42,6 +41,22 @@ def makeLine(sylCountList, fileCountList):
 		retLine += tempLines[tempLinesNum] + " "
 	return retLine;	
 
+def fileLine2 (size, fileList):
+	# fileList = randFileLine(size)
+	count = 0
+	while (count < size-1):
+		if(fileList[count-1] == 1 or fileList[count + 1] == 1):
+			fileList[count] = randint(2, 3)
+		if(fileList[count] == 4 and (fileList[count-1] != 3 or fileList[count + 1] != 3)):
+			fileList[count] = randint(1, 3)
+		if(fileList[count-1] == 3 or fileList[count + 1] == 3):
+			fileList[count] = 4			
+		if(fileList[count-1] == 3 and fileList[count] == 3):
+			fileList[randint(count-1, count)] = randint(1, 2)	
+		if(fileList[count-1] == 4 and fileList[count] == 4):
+			fileList[randint(count-1, count)] = randint(1, 3)
+		count+=1
+	return fileList	
 
 def haikuType1():
 	sylList1 = randSylLine(5)
@@ -56,12 +71,21 @@ def haikuType2():
 	sylList1 = randSylLine(5)
 	sylList2 = randSylLine(7)
 	sylList3 = randSylLine(5)
-	haikuStr = ("\n" + makeLine(sylList1, randFileLine(len(sylList1))) + "\n" + 
-				makeLine(sylList2, randFileLine(len(sylList2))) + "\n" + 
-				makeLine(sylList3, randFileLine(len(sylList3))) + "\n")
-	return haikuStr	
+	fileList1 = randFileLine(len(sylList1))
+	fileList2 = randFileLine(len(sylList2))
+	fileList3 = randFileLine(len(sylList3))
 
-print (haikuType1() + haikuType2())
+	haikuStr1 = ("\n" + makeLine(sylList1, fileList1) + "\n" + 
+				makeLine(sylList2, fileList2) + "\n" + 
+				makeLine(sylList3, fileList3) + "\n")
+
+	haikuStr2 = ("\n" + makeLine(sylList1, fileLine2(len(sylList1), fileList1)) + "\n" + 
+				makeLine(sylList2, fileLine2(len(sylList2), fileList2)) + "\n" + 
+				makeLine(sylList3, fileLine2(len(sylList3), fileList3)) + "\n")
+
+	return haikuStr1 + haikuStr2
+
+print (haikuType2())
 
 
 
