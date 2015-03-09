@@ -14,7 +14,6 @@ import HaikuTest
 @app.route('/')
 @app.route('/index')
 # @app.route('/login', methods=['GET', 'POST'])
-
 # def login():
 #     form = LoginForm()
 #     if form.validate_on_submit():
@@ -26,6 +25,8 @@ import HaikuTest
 #                            form=form,
 #                            providers=app.config['OPENID_PROVIDERS'])
 
+
+# This is the index, the main page, you can specify what you want passed into the index html
 def index():
 	# This is sample for test
   user = {'nickname': 'yoFace'}  # fake user
@@ -41,13 +42,15 @@ def index():
   ]
   blah = randomness(5)
   blah2 = HaikuTest.makeHaiku1()
-
+  # Make sure all variables you want passed goes inside here!
   return render_template("index.html",
                          title='Home',
                          user=user,
                          posts=posts,
                          blah=blah,
                          blah2=blah2)
+
+#This is another def that leads to another page, remember to specify the routes  
 @app.route('/betterHaiku')
 def betterHaiku():
   blah2 = HaikuTest.haikuType2()

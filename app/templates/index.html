@@ -1,7 +1,12 @@
+<!-- This is the main index page -->
+
 <html>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/haikucss.css') }}">
   <head>
+    <!-- if you want to use python function you wrap in brackets with % symbols -->
     {% if title %}
+
+    <!-- Just using a variable you can use double brackets wrapped -->
     <title>{{ title }} - HaikuMaker</title>
     {% else %}
     <title>Welcome to HaikuMaker</title>
