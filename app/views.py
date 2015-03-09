@@ -28,26 +28,32 @@ import HaikuTest
 
 def index():
 	# This is sample for test
-    user = {'nickname': 'yoFace'}  # fake user
-    posts = [  # fake array of posts
-        { 
-            'author': {'nickname': 'John'}, 
-            'body': 'Beautiful day in Portland!' 
-        },
-        { 
-            'author': {'nickname': 'Susan'}, 
-            'body': 'The Avengers movie was so cool!' 
-        }
-    ]
-    blah = randomness(5)
+  user = {'nickname': 'yoFace'}  # fake user
+  posts = [  # fake array of posts
+      { 
+          'author': {'nickname': 'John'}, 
+          'body': 'Beautiful day in Portland!' 
+      },
+      { 
+          'author': {'nickname': 'Susan'}, 
+          'body': 'The Avengers movie was so cool!' 
+      }
+  ]
+  blah = randomness(5)
+  blah2 = HaikuTest.makeHaiku1()
 
-    blah2 = HaikuTest.makeHaiku1()
-    return render_template("index.html",
-                           title='Home',
-                           user=user,
-                           posts=posts,
-                           blah=blah,
-                           blah2=blah2)
+  return render_template("index.html",
+                         title='Home',
+                         user=user,
+                         posts=posts,
+                         blah=blah,
+                         blah2=blah2)
+@app.route('/betterHaiku')
+def betterHaiku():
+  blah2 = HaikuTest.haikuType2()
+  return render_template("betterHaiku.html",
+                         title='Home',
+                         blah2=blah2)
 
 def randomness (n):
 	line = ""

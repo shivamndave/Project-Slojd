@@ -3,21 +3,21 @@
     {% if title %}
     <title>{{ title }} - microblog</title>
     {% else %}
-    <title>microblog</title>
+    <title>HaikuMaker</title>
     {% endif %}
   </head>
   <body>
-    <div>HaikuMaker: <a href="/index">Home</a></div>
+    <a href="/index">Home</a>
+    <a href="/betterHaiku">betterHaiku</a>
+    <a href="/index">test2</a>
+    <form action="http://google.com"><input type="submit" value="go to google"></form>
+    <form action="/index"><input type="submit" value="button test 2"></form>
+
+    <!-- I might just use these types of buttons -->
+    <input type=button onClick="location.href='index'" value="Index">
+    <input type=button onClick="location.href='betterHaiku'" value="betterHaiku">
     <hr>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-            <li>{{ message }} </li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+
     {% block content %}{% endblock %}
   </body>
 </html>
