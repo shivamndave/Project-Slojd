@@ -4,8 +4,6 @@
 # This binary search was created to compare a user input
 
 import os
-import sys
-sys.setrecursionlimit(20)
 
 from HaikuMod import getWordFile
 
@@ -18,7 +16,7 @@ from HaikuMod import getWordFile
 #binary search that returns 1 if found and 0 if not
 def binarySearch(wordFile, key, lowerBound, UpperBound):
 	if (UpperBound <= lowerBound):
-		print("reached the end without finding solution")
+		# print("reached the end of file without finding solution")
 		return 0;
 	else:
 		#round the midpoint down
@@ -46,14 +44,14 @@ def inputMatching(userIn):
 	for i in range(1,5):
 		for j in range(1,5):
 			fileIn = getWordFile(i,j)
-			hello = len(fileIn)
-			print hello
+			#hello = len(fileIn)
+			#print hello
 			total = binarySearch(fileIn, userIn, 0, len(fileIn))
 			output = [i, j]
-			print output
+			#print output
 			if (total != 0):
 				return output
 				break
 	return [0,0]
 
-#print inputMatching("obfuscation")
+print inputMatching("complicated")
