@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, Flask
+from flask import render_template, flash, redirect, Flask, jsonify, request
 from app import app
 # from .forms import LoginForm
 from random import randint
@@ -10,6 +10,15 @@ import HaikuMod
 import HaikuTest
 
 # index view function suppressed for brevity
+
+# This here is a function that's called to add the numbers, might do something similar for Haikus
+@app.route('/_add_numbers')
+def add_numbers():
+    """Add two numbers server side, ridiculous but well..."""
+    a = request.args.get('a', 0, type=int)
+    b = request.args.get('b', 0, type=int)
+    return jsonify(result=a + b)
+
 
 @app.route('/')
 @app.route('/index')

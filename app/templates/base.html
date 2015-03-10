@@ -9,6 +9,13 @@
     {% endif %}
   </head>
   <body>
+    <!-- This section here was used with the jquery example -->
+    <script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+
     <a href="/index">Home</a>
     <a href="/betterHaiku">betterHaiku</a>
     <a href="/index">test2</a>
