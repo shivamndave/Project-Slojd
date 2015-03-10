@@ -1,6 +1,13 @@
+<!-- This is the main index page -->
+
 <html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/haikucss.css') }}">
+
   <head>
+    <!-- if you want to use python function you wrap in brackets with % symbols -->
     {% if title %}
+
+    <!-- Just using a variable you can use double brackets wrapped -->
     <title>{{ title }} - HaikuMaker</title>
     {% else %}
     <title>Welcome to HaikuMaker</title>
@@ -9,12 +16,52 @@
   <body>
     {% extends "base.html" %}
 	{% block content %}
-	    <h1>Hi, {{ user.nickname }}!</h1>
+<!-- 	    <h1>Hi, {{ user.nickname }}!</h1>
 	    {% for post in posts %}
 	    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-	    {% endfor %}
+	    {% endfor %} -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--  
+      <script type="text/javascript" src="{{ url_for('static', filename='js/typewriter.js') }}"></script> -->
+
 	    <p>{{blah}} </p>
-      <p>{{blah2}} </p>
+      <!-- <div id="TypeEffect"> -->
+        <pre id="newlines">{{blah2}} </pre>
+      <!-- </div> -->
+
+<!--       <input type="submit" name="submit" value="Do Something">
+      <input type="submit" name="submit" value="Do Something Else"> -->
+
+<!-- This is the jquery stuff for the adding -->
+      <script type="text/javascript">
+      $(function() {
+        var submit_form = function(e) {
+          $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+            a: $('input[name="a"]').val(),
+            b: $('input[name="b"]').val()
+          }, function(data) {
+            $('#result').text(data.result);
+            $('input[name=a]').focus().select();
+          });
+          return false;
+        };
+        $('a#calculate').bind('click', submit_form);
+        $('input[type=text]').bind('keydown', function(e) {
+          if (e.keyCode == 13) {
+            submit_form(e);
+          }
+        });
+        $('input[name=a]').focus();
+      });
+    </script>
+    <h1>jQuery Example</h1>
+    <p>
+      <input type="text" size="5" name="a"> +
+      <input type="text" size="5" name="b"> =
+      <span id="result">?</span>
+    <p><a href=# id="calculate">calculate server side</a>
 	{% endblock %}
   </body>
 </html>
+
+
